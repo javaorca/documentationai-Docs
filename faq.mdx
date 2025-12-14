@@ -1,0 +1,136 @@
+---
+title: Frequently Asked Questions
+description: Find answers to common queries about using Pepperstars, from troubleshooting tips to advanced usage scenarios.
+---
+
+## Account Management
+
+Manage your Pepperstars account efficiently with these steps. You create, update, or recover access quickly.
+
+<ExpandableGroup>
+
+<Expandable title="How do I create a Pepperstars account?" default-open="true">
+
+Follow these steps to sign up:
+
+<Steps>
+  <Step title="Visit Signup Page" icon="globe">
+    Navigate to `https://app.pepperstars.dev/signup`.
+  </Step>
+  <Step title="Enter Details" icon="user">
+    Provide your email, name, and password. Verify with CAPTCHA.
+  </Step>
+  <Step title="Confirm Email" icon="mail">
+    Check your inbox for verification link and click it.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Use a strong password with at least 12 characters including symbols.
+</Callout>
+
+</Expandable>
+
+<Expandable title="What if I forgot my password?">
+
+Reset it in three steps:
+
+<Steps>
+  <Step title="Click Forgot Password" icon="key">
+    On login page, select `Forgot Password?`.
+  </Step>
+  <Step title="Enter Email" icon="mail">
+    Input your registered email address.
+  </Step>
+  <Step title="Follow Link" icon="external-link">
+    Open the reset link from email and set new password.
+  </Step>
+</Steps>
+
+</Expandable>
+
+</ExpandableGroup>
+
+## Common Errors and Fixes
+
+You encounter errors like authentication failures or rate limits. Use these solutions.
+
+<Tabs>
+  <Tab title="Auth Error 401" icon="shield-alert">
+
+  Common cause: Invalid `{API_KEY}`.
+
+  <CodeGroup tabs="Node.js,Python">
+  ```javascript
+  const response = await fetch('https://api.pepperstars.dev/v1/users', {
+    headers: { 'Authorization': `Bearer ${YOUR_PEPPERSTARS_API_KEY}` }
+  });
+  if (!response.ok) {
+    console.error('Auth failed:', response.status);
+  }
+  ```
+  ```python
+  import requests
+  headers = {'Authorization': f'Bearer {YOUR_PEPPERSTARS_API_KEY}'}
+  response = requests.get('https://api.pepperstars.dev/v1/users', headers=headers)
+  if response.status_code != 200:
+      print(f"Auth failed: {response.status_code}")
+  ```
+  </CodeGroup>
+
+  </Tab>
+  <Tab title="Rate Limit 429" icon="clock">
+
+  Wait 60 seconds or upgrade plan.
+
+  <Callout kind="alert">
+    Exceeding 100 requests per minute triggers this. Monitor usage in dashboard.
+  </Callout>
+
+  </Tab>
+</Tabs>
+
+## Performance Tips
+
+Optimize Pepperstars for speed. Implement caching and efficient queries.
+
+<Columns cols={2}>
+  <Card title="Enable Caching" icon="database" horizontal>
+    Store responses locally to reduce API calls.
+  </Card>
+  <Card title="Batch Requests" icon="package">
+    Combine multiple operations into one call.
+  </Card>
+</Columns>
+
+<Steps>
+  <Step title="Set Up Redis Cache" icon="settings">
+    ```bash
+    npm install redis
+    ```
+    Connect: `const client = redis.createClient({ url: 'redis://localhost:6379' });`
+  </Step>
+  <Step title="Cache API Results" icon="save">
+    Use TTL of 300 seconds for dynamic data.
+  </Step>
+</Steps>
+
+## Support Resources
+
+Access help when needed.
+
+<Columns cols={3}>
+  <Card title="Documentation" icon="book-open" href="https://docs.pepperstars.dev" target="_blank">
+    Full API and usage guides.
+  </Card>
+  <Card title="Discord Community" icon="message-circle" href="https://discord.gg/pepperstars" target="_blank">
+    Ask questions live.
+  </Card>
+  <Card title="Email Support" icon="mail" href="mailto:support@pepperstars.dev">
+    For premium users.
+  </Card>
+</Columns>
+
+<Callout kind="info">
+  Report bugs via GitHub issues at `https://github.com/pepperstars/platform/issues`.
+</Callout>

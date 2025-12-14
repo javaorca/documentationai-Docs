@@ -1,0 +1,144 @@
+---
+title: Changelog
+description: Track the evolution of Pepperstars with detailed release notes, including new features, bug fixes, and improvements across versions.
+---
+
+## Overview
+
+Stay updated with the latest enhancements to Pepperstars. You review release notes here to understand new capabilities, fixes, and changes that impact your integration.
+
+<Callout kind="info">
+  Check the <code>CHANGELOG.md</code> in your project repository for full commit history.
+</Callout>
+
+## Latest Releases
+
+<Columns cols={3}>
+  <Card title="v1.2.0" icon="zap" href="#v120">
+    Enhanced performance and new API endpoints.
+  </Card>
+  <Card title="v1.1.0" icon="settings" href="#v110">
+    Configuration improvements and bug fixes.
+  </Card>
+  <Card title="v1.0.0" icon="rocket" href="#v100">
+    Initial stable release with core features.
+  </Card>
+</Columns>
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time notifications via WebSockets for instant updates.
+- Introduced dashboard analytics with customizable charts.
+
+## Improvements
+
+- Optimized query performance by `>30%` for large datasets.
+- Enhanced error handling with detailed logging.
+
+## Bug Fixes
+
+- Fixed authentication token refresh loop.
+- Resolved file upload failures on mobile devices.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["bugfix", "improvement"]}>
+
+## Improvements
+
+- Streamlined setup process with interactive CLI prompts.
+- Added support for environment variable overrides.
+
+## Bug Fixes
+
+- Corrected pagination issues in list endpoints.
+- Patched security vulnerability in session management (CVE-2024-XXXX).
+
+## Deprecations
+
+- Removed legacy `v1/auth` endpoint; migrate to `v2/auth`.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Core SDK for JavaScript and Python integrations.
+- User management API with role-based access control (RBAC).
+- Built-in metrics endpoint for monitoring.
+
+## Breaking Changes
+
+- Updated default API base URL to `https://api.pepperstars.dev/v2`.
+
+</Update>
+
+## Upgrading
+
+Follow these steps to upgrade your Pepperstars integration. Review release notes above for version-specific changes.
+
+<Tabs>
+  <Tab title="npm" icon="package">
+    <Steps>
+      <Step title="Update Package">
+        ```bash
+        npm install @pepperstars/sdk@latest
+        ```
+      </Step>
+      <Step title="Rebuild">
+        ```bash
+        npm run build
+        ```
+      </Step>
+      <Step title="Test">
+        Run your test suite to verify compatibility.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="yarn" icon="package">
+    <Steps>
+      <Step title="Update Package">
+        ```bash
+        yarn add @pepperstars/sdk@latest
+        ```
+      </Step>
+      <Step title="Rebuild">
+        ```bash
+        yarn build
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Python (pip)" icon="code">
+    ```bash
+    pip install pepperstars-sdk --upgrade
+    ```
+    Restart your application and test endpoints.
+  </Tab>
+</Tabs>
+
+<CodeGroup tabs="TypeScript,Python">
+  ```typescript
+  import { PepperstarsClient } from '@pepperstars/sdk';
+
+  const client = new PepperstarsClient({ apiKey: 'YOUR_API_KEY' });
+  const users = await client.users.list();
+  ```
+  ```python
+  from pepperstars import Client
+
+  client = Client(api_key="YOUR_API_KEY")
+  users = client.users.list()
+  ```
+</CodeGroup>
+
+<Callout kind="tip">
+  Backup your configuration before upgrading. Use `{API_KEY}` placeholders securely.
+</Callout>
+
+<Expandable title="Migration Guide" default-open="false">
+  For major versions, update your base URL to `https://api.pepperstars.dev/v2`. Refer to the full migration notes in each release.
+</Expandable>

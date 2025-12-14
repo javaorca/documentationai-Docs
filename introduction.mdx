@@ -1,0 +1,106 @@
+---
+title: Introduction to Pepperstars
+description: Welcome to Pepperstars, a technology company specializing in innovative software development solutions. This documentation provides an overview of our platform, its core capabilities, and how it empowers developers and organizations.
+---
+
+## Overview
+
+Pepperstars delivers cutting-edge software development tools that streamline your workflow and boost productivity. You build scalable applications faster with our intuitive platform, which integrates seamlessly into your existing stack. Our solutions focus on automation, collaboration, and performance optimization for modern development teams.
+
+<Columns cols={3}>
+  <Card title="Rapid Prototyping" icon="zap" href="/docs/prototyping">
+    Turn ideas into working prototypes in hours, not days.
+  </Card>
+  <Card title="Team Collaboration" icon="users" href="/docs/collaboration">
+    Real-time editing and version control for distributed teams.
+  </Card>
+  <Card title="Enterprise Scale" icon="trending-up" href="/docs/enterprise">
+    Handle millions of users with zero-downtime deployments.
+  </Card>
+</Columns>
+
+## Key Benefits
+
+You gain immediate value from Pepperstars through several core advantages:
+
+- **Speed**: Accelerate development cycles by up to 50% with automated tooling.
+- **Reliability**: Built-in testing and monitoring ensure production-ready code.
+- **Flexibility**: Supports multiple languages and frameworks out of the box.
+
+<Callout kind="success">
+  Pepperstars reduces deployment time from weeks to minutes, empowering you to iterate faster.
+</Callout>
+
+## Target Audience
+
+Pepperstars serves a range of users, from solo developers to large organizations.
+
+<Tabs>
+  <Tab title="Individual Developers" icon="code">
+    Freelancers and indie hackers prototype apps quickly without complex setups. Access pre-built components and deploy to production effortlessly.
+  </Tab>
+  <Tab title="Development Teams" icon="users">
+    Collaborate on shared projects with real-time syncing. Integrate with GitHub, GitLab, and CI/CD pipelines for smooth workflows.
+  </Tab>
+  <Tab title="Enterprises" icon="building">
+    Scale to enterprise needs with compliance features, SSO, and dedicated support. Manage large codebases securely.
+  </Tab>
+</Tabs>
+
+## Getting Started Roadmap
+
+Follow these steps to launch your first project with Pepperstars.
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+    Sign up at https://app.pepperstars.dev and verify your email.
+  </Step>
+  <Step title="Install SDK" icon="download">
+    Choose your preferred language and install the SDK.
+
+    <CodeGroup tabs="Node.js,Python">
+      ```bash
+      npm install pepperstars-sdk
+      ```
+      ```bash
+      pip install pepperstars-sdk
+      ```
+    </CodeGroup>
+  </Step>
+  <Step title="Initialize Project" icon="settings">
+    Set up your first project with a simple configuration.
+
+    ```javascript
+    import { Pepperstars } from 'pepperstars-sdk';
+
+    const client = new Pepperstars({ apiKey: 'YOUR_API_KEY' });
+    await client.init();
+    ```
+  </Step>
+  <Step title="Deploy" icon="rocket">
+    Push your code and deploy live.
+
+    <Callout kind="tip">
+      Use `client.deploy()` for one-click production deploys.
+    </Callout>
+  </Step>
+</Steps>
+
+<Expandable title="Frequently Asked Questions" default-open="false">
+  ### What makes Pepperstars unique?
+  Our platform combines AI-assisted coding with collaborative editing in a single interface.
+
+  ### Do I need prior experience?
+  No, beginners start with guided templates while experts leverage advanced APIs.
+
+  ### Pricing details?
+  Free tier for individuals, paid plans start at $29/month for teams.
+</Expandable>
+
+| Feature | Pepperstars | Traditional Tools |
+|---------|-------------|-------------------|
+| Setup Time | `<5` minutes | Hours |
+| Collaboration | Real-time | Email/Git |
+| Scaling | Automatic | Manual |
+
+This roadmap positions you for success. Explore the sidebar for detailed guides.
